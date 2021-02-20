@@ -65,6 +65,8 @@ def load():
         if not path:
             # Environment variable
             path = os.getenv('ZBAR_PATH')
+            print(path)
+            print('PATH FOUND %s' % os.popen('ls %s' % path).read())
             if not path:
                 raise ImportError(
                     'Unable to find zbar shared library. If the library '
